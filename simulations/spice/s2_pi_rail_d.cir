@@ -1,0 +1,58 @@
+* S2 Pi rail
+Vin vin0 0 6.6
+Rin vin0 vin 15m
+Cin vin 0 18u
+* --- COT buck X
+BXsw Xsw 0 V = v(Xon)*v(vin)
+RXsw Xsw Xswr {(0.0208+0.0106)/2}
+LX1 Xswr Xlx 2.2u ic=0.5
+RXdcr Xlx vout 12.5m
+BXiin vin 0 I = v(Xon)*i(LX1)
+RXt vout Xfb 182k
+RXb Xfb 0 24k
+CXff vout Xfb 33p
+RXinj Xsw Xrp 1k
+CXinj Xrp 0 {1.6666666666666667e-05/1k} ic=5.15
+BXint 0 Xx I = 3.333e-06*(v(Xfb)-0.6)
+CXint Xx 0 1n ic=0
+RXhp Xrp Xrpf 1k
+CXhp Xrpf 0 {3.3333333333333335e-05/1k} ic=5.15
+BXfbm Xfbm 0 V = v(Xfb) + max(-0.01174, min(0.01174, 0.1*(v(Xrp)-v(Xrpf)))) + v(Xx)
+BXcmp Xcmp 0 V = 0.5*(1+tanh((0.6-v(Xfbm))*4000))
+BXtrg Xtrg 0 V = v(Xcmp)*(1-v(Xon))*(1-v(Xblk))
+BXnof Xnof 0 V = 1-v(Xon)
+VXclr Xclr 0 0
+AXon Xtrg vin Xclr Xon XON
+.model XON oneshot(cntl_array=[3 4 5 6 7 8 9 10 12 15 18 24] pw_array=[1.63333e-06 1.63333e-06 1.63333e-06 1.43056e-06 1.22619e-06 1.07292e-06 9.53704e-07 8.58333e-07 7.15278e-07 5.72222e-07 4.76852e-07 3.57639e-07] clk_trig=0.5 pos_edge_trig=true out_low=0 out_high=1 rise_delay=2n fall_delay=2n retrig=false)
+AXbk Xnof vin Xclr Xblk XBK
+.model XBK oneshot(cntl_array=[0 30] pw_array=[1e-07 1e-07] clk_trig=0.5 pos_edge_trig=true out_low=0 out_high=1 rise_delay=1n fall_delay=1n retrig=false)
+Cout vout co 60u ic=5.15
+Rco co 0 1m
+C310 vout 0 100n
+Rpcb vout j702 4m
+C701 j702 0 8u ic=5.15
+Rcab j702 c1 50m
+Lcab c1 pi 0.15u ic=0.5
+Cpi pi cpi 20u ic=5.1230
+Rcpi cpi 0 10m
+Ipi pi 0 PWL(0 0.5 0.002 0.5 0.00200225 5.0 0.0025 5.0 0.00250225 0.5)
+.option method=gear reltol=1e-3
+.tran 2n 0.003 0 2n uic
+.meas tran vavg AVG v(vout) from=1.8m to=0.002
+.meas tran vpp PP v(vout) from=1.8m to=0.002
+.meas tran vpi0 AVG v(pi) from=1.8m to=0.002
+.meas tran vpi1 AVG v(pi) from=2.4m to=0.0025
+.meas tran vmin MIN v(vout) from=0.002 to=2.4m
+.meas tran vpimin MIN v(pi) from=0.002 to=2.4m
+.meas tran vmax MAX v(vout) from=0.0025 to=0.003
+.meas tran vpp1 PP v(vout) from=2.4m to=0.0025
+.meas tran ilmax MAX i(LX1) from=0.002 to=0.0025
+.meas tran ilmin MIN i(LX1) from=2.4m to=0.0025
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s2_pi_rail_d.dat v(vout) v(pi) i(LX1)
+.endc
+.end

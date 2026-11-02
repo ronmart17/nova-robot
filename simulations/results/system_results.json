@@ -1,0 +1,285 @@
+{
+ "A_stability": {
+  "mass_g": 749.7924046968474,
+  "cg_mm": [
+   0.5091603111088268,
+   3.3223292350280027,
+   56.10465621270071
+  ],
+  "caster_load_g": 49.82114452652567,
+  "a_tip_ms2": 0.5809152394065766,
+  "a_lat_ms2": 6.191124195637187,
+  "rock_back_deg": 6.588620498441247,
+  "touch_tip_N": 0.6109317847565211,
+  "cg_y_p05": 1.7442274035179075,
+  "cg_y_p95": 4.913339119657812,
+  "p_cg_behind_axle": 0.0,
+  "ballast100": {
+   "cg_y": 9.756567816446903,
+   "cg_z": 51.14995716149879,
+   "a_tip": 1.8712025501242784
+  },
+  "plot": "/home/claude/robot/sim/out/sys_a_stability.png"
+ },
+ "B_drive": {
+  "30": {
+   "rpm": 500.00000000000006,
+   "v_max_ms": 1.1257373675363425,
+   "stall_torque_kgcm": 0.44726140680317633,
+   "F_stall_N": 4.081520372780614,
+   "a_max_ms2": 5.443533899801019,
+   "counts_per_mm": 6.218146613822888,
+   "v_min_ctrl_ms": 0.0900589894029074
+  },
+  "50": {
+   "rpm": 300.00000000000006,
+   "v_max_ms": 0.6754424205218056,
+   "stall_torque_kgcm": 0.7110309544050494,
+   "F_stall_N": 6.488570849035847,
+   "a_max_ms2": 8.653823122760594,
+   "counts_per_mm": 10.363577689704814,
+   "v_min_ctrl_ms": 0.05403539364174445
+  },
+  "100": {
+   "rpm": 150.00000000000003,
+   "v_max_ms": 0.3377212102609028,
+   "stall_torque_kgcm": 1.2615065320089587,
+   "F_stall_N": 11.511980538611988,
+   "a_max_ms2": 15.353557153284926,
+   "counts_per_mm": 20.727155379409627,
+   "v_min_ctrl_ms": 0.027017696820872225
+  },
+  "150": {
+   "rpm": 100.0,
+   "v_max_ms": 0.2251474735072685,
+   "stall_torque_kgcm": 1.7890456272127053,
+   "F_stall_N": 16.326081491122455,
+   "a_max_ms2": 21.774135599204076,
+   "counts_per_mm": 31.09073306911444,
+   "v_min_ctrl_ms": 0.01801179788058148
+  },
+  "298": {
+   "rpm": 50.33557046979866,
+   "v_max_ms": 0.1133292651882224,
+   "stall_torque_kgcm": 3.2808344425192995,
+   "F_stall_N": 29.939521749873798,
+   "a_max_ms2": 39.93041482192502,
+   "counts_per_mm": 61.76692303064069,
+   "v_min_ctrl_ms": 0.009066341215057791
+  },
+  "plot": "/home/claude/robot/sim/out/sys_b_drive.png",
+  "ramp_current_A": 0.06233232750192398,
+  "stall_current_8V4_A": 0.8400000000000001
+ },
+ "C_runtime": {
+  "Pi off (standby)": {
+   "P_bat_W": 0.16116279069767445,
+   "runtime_h": 273.34166666666664,
+   "I_bat_A": 0.021778755499685734
+  },
+  "Idle, listening": {
+   "P_bat_W": 4.331580395098774,
+   "runtime_h": 10.141666666666667,
+   "I_bat_A": 0.5853487020403748
+  },
+  "Conversation (cloud AI)": {
+   "P_bat_W": 6.384711324890045,
+   "runtime_h": 6.875,
+   "I_bat_A": 0.8627988276878439
+  },
+  "Vision + driving": {
+   "P_bat_W": 8.907062500919347,
+   "runtime_h": 4.916666666666667,
+   "I_bat_A": 1.2036570947188305
+  },
+  "Full load (local AI)": {
+   "P_bat_W": 10.197385081564509,
+   "runtime_h": 4.291666666666667,
+   "I_bat_A": 1.3780250110222307
+  },
+  "plot": "/home/claude/robot/sim/out/sys_c_runtime.png"
+ },
+ "D_charging": {
+  "Dock, IINDPM 2.5 A, Pi idle": {
+   "t_full_h": 2.577777777777778,
+   "t_10_80_h": 1.511111111111111,
+   "I_max": 3.0,
+   "P_in_W": 28.0
+  },
+  "Dock, IINDPM 1.8 A, Pi idle": {
+   "t_full_h": 3.3055555555555554,
+   "t_10_80_h": 2.202777777777778,
+   "I_max": 2.112429590256236,
+   "P_in_W": 20.5632
+  },
+  "Dock, IINDPM 1.8 A, Pi off": {
+   "t_full_h": 2.797222222222222,
+   "t_10_80_h": 1.7277777777777779,
+   "I_max": 2.6998288978988594,
+   "P_in_W": 20.5632
+  },
+  "USB-C 5 V 3 A source, Pi idle": {
+   "t_full_h": 5.419444444444444,
+   "t_10_80_h": 4.019444444444445,
+   "I_max": 1.1509929300686255,
+   "P_in_W": 13.74
+  },
+  "USB 5 V 1.5 A source, Pi idle": {
+   "t_full_h": 12.0,
+   "t_10_80_h": null,
+   "I_max": 0.31082137594034004,
+   "P_in_W": 7.1850000000000005
+  },
+  "plot": "/home/claude/robot/sim/out/sys_d_charging.png"
+ },
+ "E_pogo": {
+  "2.5A": {
+   "p_over_1A5": 0.75956,
+   "i_worst": 2.0826733108838873,
+   "drop_V": 0.25,
+   "p_contact_W": 0.15625
+  },
+  "2.0A": {
+   "p_over_1A5": 0.16184,
+   "i_worst": 1.6638103087147327,
+   "drop_V": 0.2,
+   "p_contact_W": 0.1
+  },
+  "1.8A": {
+   "p_over_1A5": 0.0,
+   "i_worst": 1.4987277309011902,
+   "drop_V": 0.18000000000000002,
+   "p_contact_W": 0.08100000000000002
+  },
+  "plot": "/home/claude/robot/sim/out/sys_e_pogo.png"
+ },
+ "F_protection": {
+  "oc_trip_A": {
+   "min": 6.383712905452036,
+   "typ": 10.0,
+   "max": 12.647058823529411
+  },
+  "short_trip_A": {
+   "min": 24.154589371980677,
+   "typ": 55.0,
+   "max": 88.23529411764706
+  },
+  "charge_oc_trip_A": {
+   "min": 5.866114561766737,
+   "typ": 10.0
+  },
+  "loads_A": {
+   "Pi realistic peak (3 A at 5.15 V)": 2.595766129032258,
+   "Pi absolute max (5 A at 5.15 V)": 4.373301630434782,
+   "both motors stalled (6.4 V / 10 \u03a9 each)": 1.28,
+   "3.3 V rail + rest": 0.35
+  },
+  "worst_A": 6.003301630434782,
+  "realistic_A": 4.225766129032258,
+  "fuse_A": 10,
+  "cell_ocv_max": 4.29,
+  "plot": "/home/claude/robot/sim/out/sys_f_protection.png"
+ },
+ "G_thermal": {
+  "plot": "/home/claude/robot/sim/out/sys_g_thermal.png",
+  "idle @ 25 \u00b0C": {
+   "T_internal": 32.8128288537328,
+   "T_soc": 49.387828853732806,
+   "P_internal": 4.325806451612903,
+   "T_soc_improved": 47.17722535560709
+  },
+  "idle @ 35 \u00b0C": {
+   "T_internal": 42.8128288537328,
+   "T_soc": 59.387828853732806,
+   "P_internal": 4.325806451612903,
+   "T_soc_improved": 57.17722535560709
+  },
+  "conversation @ 25 \u00b0C": {
+   "T_internal": 35.5267891109224,
+   "T_soc": 60.389289110922405,
+   "P_internal": 5.938709677419354,
+   "T_soc_improved": 57.39379401021897
+  },
+  "conversation @ 35 \u00b0C": {
+   "T_internal": 45.5267891109224,
+   "T_soc": 70.3892891109224,
+   "P_internal": 5.938709677419354,
+   "T_soc_improved": 67.39379401021897
+  },
+  "full load @ 25 \u00b0C": {
+   "T_internal": 40.771252362897336,
+   "T_soc": 82.20875236289734,
+   "P_internal": 9.164516129032258,
+   "T_soc_improved": 77.68271812367564
+  },
+  "full load @ 35 \u00b0C": {
+   "T_internal": 50.771252362897336,
+   "T_soc": 92.20875236289734,
+   "P_internal": 9.164516129032258,
+   "T_soc_improved": 87.68271812367564
+  },
+  "docked + charging, idle @ 25 \u00b0C": {
+   "T_internal": 35.837173751738725,
+   "T_soc": 52.41217375173873,
+   "P_internal": 6.1258064516129025,
+   "T_soc_improved": 49.32656682541421
+  },
+  "docked + charging, idle @ 35 \u00b0C": {
+   "T_internal": 45.837173751738725,
+   "T_soc": 62.41217375173873,
+   "P_internal": 6.1258064516129025,
+   "T_soc_improved": 59.32656682541421
+  },
+  "docked + charging, full load @ 25 \u00b0C": {
+   "T_internal": 43.61286984384225,
+   "T_soc": 85.05036984384225,
+   "P_internal": 10.964516129032258,
+   "T_soc_improved": 79.68896018676169
+  },
+  "docked + charging, full load @ 35 \u00b0C": {
+   "T_internal": 53.61286984384225,
+   "T_soc": 95.05036984384225,
+   "P_internal": 10.964516129032258,
+   "T_soc_improved": 89.68896018676169
+  }
+ },
+ "H_docking": {
+  "A: align at 0.40 m, turn there, reverse 0.40 m": {
+   "success": 0.455325,
+   "sigma_e_mm": 10.756140465764457,
+   "p_retry3": 0.8384108017124531
+  },
+  "B: last fix at 0.12 m, turn at 134 mm, reverse 62 mm": {
+   "success": 0.988625,
+   "sigma_e_mm": 2.56042074275902,
+   "p_retry3": 0.9999985281816406
+  },
+  "B without gyro/camera calibration": {
+   "success": 0.817975,
+   "sigma_e_mm": 4.872162550095917,
+   "p_retry3": 0.9939689473587344
+  },
+  "A with an 8 mm tongue chamfer": {
+   "success": 0.646825,
+   "sigma_e_mm": 10.719242997701638,
+   "p_retry3": 0.9559475708377656
+  },
+  "plot": "/home/claude/robot/sim/out/sys_h_docking.png"
+ },
+ "I_apriltag": {
+  "1536px": {
+   "d_max_detect_m": 1.971027153682666,
+   "d_max_pose_m": 0.7391351826309998
+  },
+  "2304px": {
+   "d_max_detect_m": 2.956540730523999,
+   "d_max_pose_m": 1.1087027739464994
+  },
+  "640px": {
+   "d_max_detect_m": 0.8212613140344442,
+   "d_max_pose_m": 0.3079729927629165
+  },
+  "min_distance_fov_m": 0.08023864481780471,
+  "plot": "/home/claude/robot/sim/out/sys_i_apriltag.png"
+ }
+}

@@ -1,0 +1,21 @@
+* S4 power-up
+Vsw en 0 PWL(0 0 1m 0 1.01m 7.4)
+B33 v33 0 V = 3.33*min(1, max(0, (time-1.3m)/4.8m))
+R310 v33 pien 100k
+C312 pien 0 1n
+B5 v5 0 V = 5.15*min(1, max(0, (time - {tpien})/1.9m))
+R401 v33 chpu 10k
+C403 chpu 0 1u
+.param tpien=0
+.tran 2u 25m 0 2u
+.meas tran t33 WHEN v(v33)=3.15 RISE=1
+.meas tran tpien WHEN v(pien)=1.2 RISE=1
+.meas tran tpu WHEN v(chpu)=2.475 RISE=1
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s4_power_up_a.dat v(v33) v(pien) v(chpu)
+.endc
+.end

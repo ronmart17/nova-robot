@@ -1,0 +1,42 @@
+* S1 VSYS + motors
+Vbat bat 0 6.6
+Rb bat b1 0.09
+Lb b1 vsys 0.3u
+* VSYS bank: C210–C214 5×10 µF, C503/C504 2×22 µF, C301–C303 3×10 µF (25 V X5R, ≈ 55 % at 7.4 V) + C502
+Ccer vsys ncer 72u
+Rcer ncer 0 2m
+Cel vsys nel 100u
+Rel nel 0 0.34
+Vpwm pwm 0 PULSE(0 1 0 20n 20n 37.5u 50u)
+S1 vsys m1 pwm 0 SWM
+D1 0 m1 DF
+Rm1 m1 ma1 9.5
+Lm1 ma1 mb1 0.6m
+Bemf1 mb1 0 V = time < 2m ? 4.0 : 0
+S2 vsys m2 pwm 0 SWM
+D2 0 m2 DF
+Rm2 m2 ma2 9.5
+Lm2 ma2 mb2 0.6m
+Bemf2 mb2 0 V = time < 2m ? 4.0 : 0
+.model SWM SW(Ron=0.5 Roff=1Meg Vt=0.5 Vh=0.1)
+.model DF D(Is=1e-9 N=1.5 Rs=0.05)
+Vpi pis 0 PULSE(0 1 0 5n 5n 1.15u 1.667u)
+Bpi vsys 0 I = 3*v(pis)
+I33 vsys 0 0.25
+.tran 20n 4m 0 20n
+.meas tran vavg AVG v(vsys) from=1m to=2m
+.meas tran vpp PP v(vsys) from=1m to=2m
+.meas tran vmin MIN v(vsys) from=1m to=4m
+.meas tran ibat AVG i(Vbat) from=1m to=2m
+.meas tran imot AVG i(Lm1) from=1m to=2m
+.meas tran imot_st AVG i(Lm1) from=3.5m to=4m
+.meas tran vpp_st PP v(vsys) from=3.5m to=4m
+.meas tran ibat_st AVG i(Vbat) from=3.5m to=4m
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s1_vsys_motors.dat v(vsys) i(Lm1) i(Vbat)
+.endc
+.end

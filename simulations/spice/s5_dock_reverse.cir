@@ -1,0 +1,41 @@
+* S5 dock
+Vad ad 0 PWL(0 0 10u 0 10.05u -12)
+Rcab ad a1 0.12
+Lcab a1 jack 1.2u
+Rptc jack f1 25m
+Dbody f1 q1 DB
+Sq1 f1 q1 q1 0 SWQ
+C1 q1 c1n 10u
+Rc1 c1n 0 3m
+C2 q1 0 100n
+D1 0 q1 TVS15
+Lpog q1 d2 10n
+Rpog d2 rob 15m
+Vctl ctl 0 PWL(0 0 10u 0 10.01u 1)
+Rlead rob r1 20m
+Llead r1 vac2 80n
+C202 vac2 c202n 1u
+Rc202 c202n 0 5m
+Vmd vac2 dk 0
+D202 0 dk TVS15
+Rvac vac2 0 200k
+.model DB D(Is=1e-11 N=1.05 Rs=0.05)
+.model SWQ SW(Ron=0.06 Roff=1G Vt=2.5 Vh=0.3)
+.model SWP SW(Ron=15m Roff=1G Vt=0.5 Vh=0.1)
+.model TVS15 D(Is=1e-12 N=1 Rs=0.8 BV=17.6 IBV=1m Cjo=150p)
+.tran 2n 60u 0 2n
+.meas tran vmax MAX v(vac2) from=0 to=60u
+.meas tran vmaxd MAX v(q1) from=0 to=60u
+.meas tran vmin MIN v(vac2) from=0 to=60u
+.meas tran vfin AVG v(vac2) from=50u to=60u
+.meas tran ipog MAX i(Lpog) from=0 to=60u
+.meas tran itvs MAX i(Vmd) from=0 to=60u
+.meas tran vjack MIN v(jack) from=0 to=60u
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s5_dock_reverse.dat v(q1) v(vac2) v(jack) i(Lpog)
+.endc
+.end

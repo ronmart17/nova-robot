@@ -1,0 +1,13 @@
+Copyright (c) 2026 Caril Ronnie Martínez Vera. All rights reserved.
+
+The design files, documentation, images, source code and every other file in this repository are published
+for viewing and evaluation only. No licence is granted to copy, modify, manufacture, distribute, sell or use
+them, in whole or in part, without the prior written permission of the copyright holder.
+
+Viewing and forking on GitHub are allowed only as required by the GitHub Terms of Service.
+
+Third-party components keep their own licences: KiCad library footprints, symbols and 3D models referenced
+through ${KICAD10_3DMODEL_DIR}, and the datasheets and trademarks of the parts used (Raspberry Pi, Espressif,
+Texas Instruments, STMicroelectronics, Seeed Studio and others) belong to their respective owners.
+
+For permissions, contact the author through GitHub (@ronmart17).

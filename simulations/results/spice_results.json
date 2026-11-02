@@ -1,0 +1,212 @@
+{
+ "s1": {
+  "a": {
+   "vavg": 7.173698,
+   "vpp": 0.04606005,
+   "vmin": 7.084368,
+   "ibat": -2.514463,
+   "imot": 0.12152,
+   "imot_st": 0.519754,
+   "vpp_st": 0.10756,
+   "ibat_st": -3.111891,
+   "plot": "/home/claude/robot/sim/out/s1_vsys_motors_7.4V.png"
+  },
+  "low": {
+   "vavg": 6.381711,
+   "vpp": 0.03649227,
+   "vmin": 6.295434,
+   "ibat": -2.42543,
+   "imot": 0.06239092,
+   "imot_st": 0.4598858,
+   "vpp_st": 0.0976356,
+   "ibat_st": -3.021725,
+   "plot": "/home/claude/robot/sim/out/s1_vsys_motors_6.6V.png"
+  }
+ },
+ "s2": {
+  "a": {
+   "vavg": 5.150005,
+   "vpp": 0.003770199,
+   "vpi0": 5.096005,
+   "vpi1": 4.988884,
+   "vmin": 5.068544,
+   "vpimin": 4.902027,
+   "vmax": 5.18872,
+   "vpp1": 0.003857434,
+   "ilmax": 3.982828,
+   "ilmin": 2.429518,
+   "plot": "/home/claude/robot/sim/out/s2_pi_rail_a.png",
+   "plot_ripple": "/home/claude/robot/sim/out/s2_pi_ripple.png"
+  },
+  "b": {
+   "vavg": 5.150103,
+   "vpp": 0.002985304,
+   "vpi0": 5.096105,
+   "vpi1": 4.98883,
+   "vmin": 5.068741,
+   "vpimin": 4.901884,
+   "vmax": 5.202773,
+   "vpp1": 0.002765412,
+   "ilmax": 3.816776,
+   "ilmin": 2.598904,
+   "plot": "/home/claude/robot/sim/out/s2_pi_rail_b.png"
+  },
+  "c": {
+   "vavg": 5.150021,
+   "vpp": 0.004949951,
+   "vpi0": 5.123015,
+   "vpi1": 4.881559,
+   "vmin": 5.000246,
+   "vpimin": 4.688625,
+   "vmax": 5.204863,
+   "vpp1": 0.004714704,
+   "ilmax": 6.480344,
+   "ilmin": 4.28115,
+   "plot": "/home/claude/robot/sim/out/s2_pi_rail_c.png"
+  },
+  "d": {
+   "vavg": 5.150075,
+   "vpp": 0.00272154,
+   "vpi0": 5.123078,
+   "vpi1": 4.882444,
+   "vmin": 4.906599,
+   "vpimin": 4.619595,
+   "vmax": 5.21681,
+   "vpp1": 0.002960699,
+   "ilmax": 6.598313,
+   "ilmin": 4.622264,
+   "plot": "/home/claude/robot/sim/out/s2_pi_rail_d.png"
+  },
+  "e": {
+   "vavg": 5.217283,
+   "vpp": 0.002715842,
+   "vpi0": 5.190285,
+   "vpi1": 4.949972,
+   "vmin": 4.967041,
+   "vpimin": 4.676885,
+   "vmax": 5.307005,
+   "vpp1": 0.002830889,
+   "ilmax": 6.913242,
+   "ilmin": 4.638893,
+   "plot": "/home/claude/robot/sim/out/s2_pi_rail_e.png"
+  }
+ },
+ "s3": {
+  "vavg": 3.328048,
+  "vpp": 0.002057994,
+  "vpp0": 0.002081086,
+  "vmin": 3.291073,
+  "vmax": 3.345539,
+  "ilmax": 0.9784488,
+  "plot": "/home/claude/robot/sim/out/s3_3v3.png"
+ },
+ "s4": {
+  "t33": 0.00584054,
+  "tpien": 0.00312973,
+  "tpu": 0.0173921,
+  "t5": 0.0049375,
+  "plot": "/home/claude/robot/sim/out/s4_power_up.png"
+ },
+ "s5": {
+  "plug": {
+   "vmax": 16.45356,
+   "vmaxd": 16.42329,
+   "vmin": -1.165979e-23,
+   "vfin": 11.96919,
+   "ipog": 2.255895,
+   "itvs": 0.0001423021,
+   "vjack": -9.497108e-24
+  },
+  "dock": {
+   "vmax": 19.47154,
+   "vmaxd": 12.45002,
+   "vmin": 5.991746e-11,
+   "vfin": 11.99693,
+   "ipog": 34.431,
+   "itvs": 2.092217,
+   "vjack": 10.12047
+  },
+  "reverse": {
+   "vmax": -1.165973e-23,
+   "vmaxd": -1.165973e-23,
+   "vmin": -5.411928e-08,
+   "vfin": -4.870477e-08,
+   "ipog": -8.45957e-30,
+   "itvs": 4.4035e-18,
+   "vjack": -12.0
+  },
+  "plot": "/home/claude/robot/sim/out/s5_dock.png"
+ },
+ "s6": {
+  "D201_only": {
+   "vmax": 9.011922,
+   "vdet": 5.017873,
+   "vfin": 5.026924
+  },
+  "with_U201": {
+   "vmax": 8.520968,
+   "vdet": 4.742189,
+   "vfin": 5.006828,
+   "iu": 0.8394662,
+   "qu": 1.16245e-06
+  },
+  "damper": {
+   "vmax": 6.17198,
+   "vdet": 3.796743,
+   "vfin": 5.0026,
+   "iu": 9.332993e-05,
+   "qu": 1.4498e-10,
+   "iin": 5.980582
+  },
+  "plot": "/home/claude/robot/sim/out/s6_usb_plug.png"
+ },
+ "s7": {
+  "cbus_pF": 110.78,
+  "2.2k_111p": {
+   "t30": 3.08729e-06,
+   "t70": 3.29383e-06,
+   "vol": 0.05892857,
+   "tr_ns": 206.5400000000003
+  },
+  "2.2k_166p": {
+   "t30": 3.12856e-06,
+   "t70": 3.43838e-06,
+   "vol": 0.05892857,
+   "tr_ns": 309.8199999999997
+  },
+  "1.5k_166p": {
+   "t30": 3.08709e-06,
+   "t70": 3.29833e-06,
+   "vol": 0.08571429,
+   "tr_ns": 211.2399999999996
+  },
+  "plot": "/home/claude/robot/sim/out/s7_i2c.png"
+ },
+ "s8": {
+  "0R_drv2": {
+   "vmax": 4.241042,
+   "vmin": -0.9410502,
+   "ih": 0.02074958,
+   "il": 0.02074964,
+   "t50": 2.93055e-08,
+   "tlast": 2.93055e-08
+  },
+  "33R_drv2": {
+   "vmax": 3.787626,
+   "vmin": -0.487626,
+   "ih": 0.0007404349,
+   "il": 0.0007404349,
+   "t50": 2.95341e-08,
+   "tlast": 2.95341e-08
+  },
+  "33R_drv1": {
+   "vmax": 3.297562,
+   "vmin": 0.002438157,
+   "ih": 0.0003715796,
+   "il": 0.000371675,
+   "t50": 3.05288e-08,
+   "tlast": 3.05288e-08
+  },
+  "plot": "/home/claude/robot/sim/out/s8_spi.png"
+ }
+}

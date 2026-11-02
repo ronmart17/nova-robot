@@ -1,0 +1,19 @@
+* S7 I2C
+Vdd vdd 0 3.3
+Rp vdd sda 2.2k
+Cb sda 0 166.2p
+Vg g 0 PULSE(1 0 0.5u 10n 10n 1.25u 2.5u)
+Sd sda 0 g 0 SWD
+.model SWD SW(Ron=40 Roff=100Meg Vt=0.5 Vh=0.05)
+.tran 2n 6u
+.meas tran t30 WHEN v(sda)=0.99 RISE=1 from=1.7u
+.meas tran t70 WHEN v(sda)=2.31 RISE=1 from=1.7u
+.meas tran vol MIN v(sda)
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s7_i2c_1.dat v(sda)
+.endc
+.end

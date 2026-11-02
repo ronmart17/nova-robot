@@ -1,0 +1,31 @@
+* S6 USB-C
+Vs s 0 PWL(0 0 5u 0 5.05u 5)
+Rc s c1 0.12
+Lc c1 vbus 0.8u
+C201 vbus cn 1u
+Rc201 cn 0 5m
+D201 0 vbus TVS12
+R203 vbus det 100k
+R204 det 0 200k
+Cdet det 0 15p
+.model TVS12 D(Is=1e-12 N=1 Rs=0.9 BV=14.0 IBV=1m Cjo=170p)
+.model ZLC6 D(Is=1e-12 N=1 Rs=2.2 BV=6.5 IBV=1m Cjo=50p)
+Vmu vbus u5 0
+DU201 0 u5 ZLC6
+Rdmp vbus dmp 1
+Cdmp dmp 0 3.5u
+.tran 1n 25u 0 1n
+.meas tran vmax MAX v(vbus)
+.meas tran vdet MAX v(det)
+.meas tran vfin AVG v(vbus) from=22u to=25u
+.meas tran iu MAX i(Vmu)
+.meas tran qu INTEG i(Vmu) from=5u to=25u
+.meas tran iin MAX i(Lc)
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s6_usb_plug_2.dat v(vbus) v(det)
+.endc
+.end

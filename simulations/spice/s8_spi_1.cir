@@ -1,0 +1,29 @@
+* S8 SPI
+Vd d 0 PULSE(0 3.3 2n 1.5n 1.5n 11.0n 25n)
+Ro d o 25
+Rs o s 33
+T1 s 0 a 0 Z0=55 TD=0.30n
+T2 a 0 b 0 Z0=100 TD=0.58n
+T3 b 0 r 0 Z0=55 TD=0.45n
+Cr r 0 6p
+Vdi vddi 0 3.3
+Vmh r rh 0
+Dh rh vddi DESD
+Vml rl r 0
+Dl 0 rl DESD
+.model DESD D(Is=1e-14 N=1 Rs=10 Cjo=0.5p)
+.tran 5p 60n
+.meas tran vmax MAX v(r) from=25n to=40n
+.meas tran vmin MIN v(r) from=36n to=52n
+.meas tran ih MAX i(Vmh) from=25n to=60n
+.meas tran il MAX i(Vml) from=25n to=60n
+.meas tran t50 WHEN v(r)=1.65 RISE=2
+.meas tran tlast WHEN v(r)=1.65 CROSS=LAST from=27n to=37n
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+run
+wrdata /home/claude/robot/sim/spice/s8_spi_1.dat v(r)
+.endc
+.end

@@ -1,0 +1,13 @@
+Item,Qty,Designators,Value,Footprint,Manufacturer,MPN,LCSC,Mouser,DigiKey,Alt MPN,Alt Mouser,Alt DigiKey,Description,Sourcing note,DNP
+1,1,C1,22u/25V,C_1206_3216Metric,Samsung,CL31A226KAHNNNE,C12891,,1276-3047-6-ND,,,,MLCC 22uF 25V X5R 1206,JLC Basic; Western sourcing: Yageo CC1206MKX5R8BB226 (Mouser/DigiKey),
+2,1,C2,100n,C_0402_1005Metric,Samsung,CL05B104KB54PNC,C307331,187-CL05B104KB54PNC,1276-CL05B104KB54PNCCT-ND,,,,MLCC 100nF 50V X7R 0402,JLC Basic,
+3,1,D1,SMF15A,D_SMF,Littelfuse,SMF15A,C123802,576-SMF15A,,,,,"TVS unidirectional 15V standoff (VBR 16.7-18.5V, Vc 24.4V) 200W SMF — 12 V dock input",,
+4,1,D2,BZT52C10,D_SOD-123,Jiangsu Changjing (CJ),BZT52C10,C173431,,,,,,Zener diode 10V 500mW SOD-123 — P-MOSFET gate clamp,Western: Diodes BZT52C10-7-F,
+5,1,D3,Green,LED_0603_1608Metric,Lite-On,LTST-C191KGKT,C125098,859-LTST-C191KGKT,160-1446-1-ND,,,,LED yellow-green 574 nm 0603,,
+6,1,F1,3A hold,Fuse_1812_4532Metric,BHFUSE,BSMD1812-300-16V,C883162,,,,,,"PTC resettable fuse 1812, Ihold 3A, Itrip 6A, 16V",Western: Littelfuse 1812L300/16DR,
+7,1,J1,12V IN,DC_Jack_XKB_DC-005-5A-2.0_Horizontal,XKB Connection,DC-005-5A-2.0,C381116,,,,,,"DC jack 5.5x2.1 mm (2.0 mm pin), right angle THT, 5 A 24 V",,
+8,1,J2,TO ROBOT,JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,JST,B2B-XH-A(LF)(SN),C158012,306-B2B-XH-ALFSN,455-2247-ND,,,,"JST XH 2-pin vertical, 3 A — contact plate to the robot main board (J_DOCK)",,
+9,4,"P1, P2, P3, P4",POGO,Pogo_YTC1P-8020_D2.0mm,YIYUAN,YTC1P-8020-01,C5221286,,,,,,"Spring-loaded pogo pin, SMD, D2.0 mm, 10 mm long, working height 9 mm, 1.5 A max, contact resistance ≤ 100 mΩ (datasheet)",,
+10,1,Q1,AO3401A,SOT-23,Alpha & Omega,AO3401A,C15127,,785-1001-1-ND,,,,"P-MOSFET -30V -4A, VGS ±12V, 60 mOhm@-4.5V, SOT-23",JLC Basic,
+11,1,R1,10k,R_0402_1005Metric,Yageo,RC0402FR-0710KL,C60490,603-RC0402FR-0710KL,311-10.0KLRCT-ND,,,,Thick-film resistor 10k 1% 0402,,
+12,1,R2,4.7k,R_0402_1005Metric,Yageo,RC0402FR-074K7L,C105871,603-RC0402FR-074K7L,,,,,Thick-film resistor 4.7k 1% 0402,JLC Basic alt C25900,

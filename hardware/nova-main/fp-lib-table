@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "robot")(type "KiCad")(uri "${KIPRJMOD}/../lib/robot.pretty")(options "")(descr "NOVA — project footprints (with 3D models)"))
+)

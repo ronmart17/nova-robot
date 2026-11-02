@@ -1,0 +1,11 @@
+(version 1)
+# NOVA Rev B main board — custom design rules (KiCad 10)
+
+# TI land pattern of the NexFET SON 3.3 × 3.3 (CSD17578Q3A / CSD17579Q3A): 0.14 mm between the source and gate pads.
+# Within the manufacturer's footprint only; JLCPCB minimum spacing is 0.10 mm.
+(rule "NexFET land pattern"
+  (constraint clearance (min 0.12mm))
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.intersectsCourtyard('Q20*') && B.intersectsCourtyard('Q20*')"))
+(rule "NexFET land pattern (protection FETs)"
+  (constraint clearance (min 0.12mm))
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.intersectsCourtyard('Q30*') && B.intersectsCourtyard('Q30*')"))

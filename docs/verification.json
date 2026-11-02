@@ -1,0 +1,26 @@
+{
+ "nova-head": {
+  "erc": {},
+  "erc_excluded": 0,
+  "drc": {},
+  "drc_types": {},
+  "unconnected": 0,
+  "parity": 0
+ },
+ "nova-dock": {
+  "erc": {},
+  "erc_excluded": 0,
+  "drc": {},
+  "drc_types": {},
+  "unconnected": 0,
+  "parity": 0
+ },
+ "nova-main": {
+  "erc": {},
+  "erc_excluded": 3,
+  "drc": {},
+  "drc_types": {},
+  "unconnected": 0,
+  "parity": 0
+ }
+}
